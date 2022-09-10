@@ -1,0 +1,59 @@
+= 조찬형 (Cho Chanhyeong)
+
+== Link
+
+* image:./resume-email.png[] chu7825@gmail.com
+* image:./resume-github-mark.png[] https://github.com/chanhyeong
+** https://github.com/chanhyeong/resume[resume]
+* image:./resume-linkedin-mark.png[LinkedIn,32,32] https://www.linkedin.com/in/chanhyeong-cho-3908059b/
+
+== Career
+
+=== 네이버 주식회사 (2018.03 ~ )
+
+==== Plasma (2021.05 ~ )
+
+* 네이버페이 아키텍처 개선 프로젝트 - 정산 파트
+* 주요 업무
+.. 건별 정산 재개발
+*** 건별 정산: 상품, 배송비, 쿠폰, ... 등의 개별 건에 대한 정산 처리
+*** 시간 단위 배치 -> 이벤트 기반 실시간 처리로 전환
+*** 전반적인 이벤트 관련 처리 정책 (실패 시 재시도, 복구 정책 등) 정의 및 구현
+*** 기존 / 신규 처리 검증, 신규로 처리 전환
+*** 임시 복구 처리를 위한 복구 배치 추가 (기존 컴포넌트)
+.. 일단위 정산 검증 및 복구 배치 전환
+*** 기존 검증 배치 전환
+*** 임시 복구 배치를 이벤트 기반에 맞는 형태로 재개발
+* 주요 기술스택
+** spring-boot, spring-kafka, kotlin, 사내 분산 DB 프레임워크
+
+==== 지식iN / eXpert (2018.03 ~ 2021.04)
+
+===== 지식iN
+
+* 주요 업무 (중요도 순)
+.. 알림 구조 개선 (2020)
+*** 여러 개로 나누어진 기존 구조 통합, 개발 생산성 및 구조 개선
+*** 초기 컴포넌트 분리 계획이었으나 사용 라이브러리 이슈 발생 -> 기존 컴포넌트로 신규 구조 이관
+*** 주요 기술스택
+**** (컴포넌트 개선 당시) spring-webflux, reactor-kafka, r2dbc, 사내 kubernetes 기반 kafka farm
+.. eXpert 서비스 출시 (2019)
+*** 서비스 알림 개발 (서비스 내부 노출, 네이버 메인, 앱, 메일)
+*** 상담 후기 및 답변 개발
+*** 기타 후처리 개발, rabbitmq-delayed-message-plugin 도입
+.. 내부 데이터 추출, 보정 툴 개선 (2018)
+*** 10년 이상 사용하던 플로우를 유지 및 개선
+**** 로컬에서 실행이 불가능, 무조건 서버를 접속해야하는 환경
+*** PHP 5.1 -> JDK8, spring-boot
+.. PC 엔드페이지 개편 & 내부 기술스택 개선 참여 (2018)
+*** 
+.. 기타
+*** FE 업무 이관 작업
+**** nginx 도입, VM 기반에서 blue/green 배포 설정
+*** Slack 및 WORKS 앱 개발 및 유지보수
+**** 주간보고, 점심 식사, 서버 재시작 알림, 배포 공지 알림 등
+*** 지식iN CHOiCE
+**** 외부 연동, 목록 및 페이징 구현, 기존 서비스 스펙 연동 등
+*** 장애 방지 작업
+**** Resilience4j 도입, spring-boot 버전업, 서비스 전체 컴포넌트 모니터링 툴 개발 등
+*** 기타 서비스 및 내부 개발 과제 참여 (eXpert 홈개편, 지식iN / eXpert 프로필 분리, ...)
