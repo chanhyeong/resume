@@ -41,3 +41,19 @@ ttf_subsets = TTFunk::SubsetCollection.new TTFunk::File.open ARGV[0]
 * https://github.com/asciidoctor/asciidoctor-pdf/blob/main/data/themes/default-theme.yml[default-theme.yml]
 * https://docs.asciidoctor.org/pdf-converter/latest/theme/cjk/[Create a CJK Theme]
 ** Chinese, Japanese, Korean
+
+== Known Issues
+
+* 한국어 폰트에 따라 파일 크기, Github Preview 불가 등의 이슈가 있음
+** 2022.09.11 기준
++
+|===
+|종류 |pdf 크기 |기타
+
+|Noto Serif (default) |89KB |한글 깨짐
+
+|나눔고딕 |126KB |3depth 이상 list 에 대한 아이콘이 없음
+
+|Noto Sans KR |1MB |Github 에서 preview 불가능, 파일 큼
+|===
++
