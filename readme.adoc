@@ -2,7 +2,7 @@
 
 == 준비 사항
 
-[code,bash]
+[source,bash]
 ----
 # asciidoctor cli 설치
 brew install asciidoctor
@@ -10,7 +10,7 @@ brew install asciidoctor
 
 === 기타 안되는 경우
 
-[code,bash]
+[source,bash]
 ----
 # 폰트 설정을 위한 ruby 라이브러리 설치
 gem install ttfunk
@@ -20,11 +20,24 @@ ruby validate-font.rb ./resources/fonts/NanumGothic.ttf
 ----
 
 .validate-font.rb
-[code.rb]
+[source,ruby]
 ----
 require 'ttfunk'
 require 'ttfunk/subset_collection'
 
 ttf_subsets = TTFunk::SubsetCollection.new TTFunk::File.open ARGV[0]
-(0...(ttf_subsets.instance_variable_get :@subsets).size).each {|idx| ttf_subsets[idx].encode }
+(0...(ttf_subsets.instance_variable_get :@subsets).size).each {|idx| ttf_subsets[idx].ensource }
 ----
+
+== pdf 생성
+
+[source,bash]
+----
+./build.sh
+----
+
+== 참고 자료
+
+* https://github.com/asciidoctor/asciidoctor-pdf/blob/main/data/themes/default-theme.yml[default-theme.yml]
+* https://docs.asciidoctor.org/pdf-converter/latest/theme/cjk/[Create a CJK Theme]
+** Chinese, Japanese, Korean

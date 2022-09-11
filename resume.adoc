@@ -1,26 +1,31 @@
-= 조찬형 (Cho Chanhyeong)
+= 조찬형 / Backend Developer
 
 :spring-organization: https://github.com/spring-projects
 :my-commits: commits?author=chanhyeong
 :my-github: https://github.com/chanhyeong
+:images: ./resources/images
 
 == Contact & Links
 
-* image:./resume-email.png[Email,20,20] chu7825@gmail.com
-* image:./resume-github-mark.png[Github,20,20] {my-github}
-** {my-github}/resume[resume]
-* image:./resume-linkedin-mark.png[LinkedIn,20,20] https://www.linkedin.com/in/chanhyeong-cho-3908059b
+[%noheader,cols="1,6",grid=rows,frame=none]
+|===
+|image:{images}/email.png[Email,20,20] |chu7825@gmail.com
+
+|image:{images}/github-mark.png[Github,20,20] |{my-github} +
+({my-github}/resume[chanhyeong/resume])
+
+|image:{images}/linkedin-mark.png[LinkedIn,20,20] |https://www.linkedin.com/in/chanhyeong-cho-3908059b
+|===
 
 == Skills & Experiences
 
 === Backend, DevOps
 
-* JAVA, Kotlin, JavaScript
-* Spring (boot, kafka, ...)
-* 사내 구축된 Kubernetes 를 이용한 배포 환경 구축
-* Jenkins Pipeline 구축
+* JAVA / Kotlin + Spring, JavaScript
+* 사내 Kubernetes 를 이용한 배포 환경 구축
 * 사내 및 서비스 내 배포 체계에 맞춘 내부 ChatOps 구성
-* PM, VM 환경에서의 서버 세팅 경험
+* Zookeeper 기반 Feature Toggle 경험
+* PM, VM 환경에서의 서버 세팅
 ** JDK, nginx 설치 등 초기 설정을 위한 스크립트 작성
 ** Perl 기반 배포 스크립트를 bash 로 재작성, blue/green 배포 기능 추가
 
@@ -29,13 +34,15 @@
 * MySQL
 ** 애플리케이션 레벨에서의 샤딩 경험 (기존 내부 구현)
 ** DB 레벨에서의 샤딩 경험 (사내 분산 DB 프레임워크 이용)
-** MyBatis, spring(-data)-jdbc
+** MyBatis, spring{-data}-jdbc
 ** (초급) JPA, r2dbc
 * Redis: 캐시 용도 사용
 
 === Tools
 
-* LINE WORKS, JIRA, Confluence, Slack, Mattermost
+* JIRA, Confluence, Slack, Mattermost, asciidoctor, LINE WORKS
+
+<<<
 
 == Careers
 
@@ -46,14 +53,14 @@
 네이버페이 아키텍처 개선 프로젝트 - 정산 파트
 
 . *건별 정산 재개발*
-** 건별 정산: 상품, 배송비, 쿠폰, ... 등의 정산 외의 서비스에서 생성된 개별 건에 대한 정산 처리
-** 시간 단위 배치 -> 이벤트 기반 실시간 처리로 전환 + 정산 외 서비스에 대한 DB 레벨 데이터 독립
-*** SQL 내 로직 -> 어플레케이션 레벨로 이관, 기존 / 신규 처리 결과 검증
-** 전반적인 이벤트 관련 처리 (실패 시 재시도, 복구 정책 등) 및 전환 방안 정의 및 구현
+** 건별 정산: 주문 흐름에서 발생하는 상품, 배송비, 쿠폰, ... 등의 개별 건에 대한 정산
+** 시간 단위 배치 -> 이벤트 기반 실시간 처리로 전환
+** 주문/정산/... 등의 단일 DB 에서 정산 DB 독립
+** 전반적인 이벤트 관련 처리 (실패 시 재시도, 복구 정책 등) 와 전환 방안 정의 및 구현
+** SQL -> 어플리케이션 레벨로 로직 이관, 기존 / 신규 처리 결과 검증
 ** 기존 컴포넌트에 임시 복구 처리를 위한 복구 배치 추가
 . *일단위 정산 검증 및 복구 배치 전환*
 ** JDK 8 + spring-framework 3.0 -> Kotlin + spring-boot 2.x 저장소로 이관
-*** 참조 DB 저장소 변경 및 어플리케이션 레벨 연동 (Oracle -> Hive)
 ** 상위 생성한 임시 복구 배치를 이벤트 기반에 맞는 형태로 설계 및 재개발
 
 ==== https://kin.naver.com/[지식iN] / https://m.expert.naver.com/[eXpert] (2018.03 ~ 2021.04)
@@ -61,13 +68,13 @@
 업무 중요도 순
 
 . *알림 구조 개선* (2020)
-** 여러 개로 나누어진 기존 구조 통합, 개발 생산성 및 구조 개선
-** 초기 컴포넌트 분리 계획이었으나 사용 라이브러리 이슈 발생 -> 기존 컴포넌트로 신규 구조 이관
-** 업무 리소스 부족으로 인한 단독 진행
+** 산개된 기존 알림 (서비스 내부 노출, 네이버 메인, 앱, 메일) 코드를 통합
+** 개발 생산성 개선 및 구조 리팩토링
+** 컴포넌트 분리 계획이었으나 사용 라이브러리 이슈 발생 -> 기존 컴포넌트로 개선한 구조 이동
+** 리소스 부족으로 인한 단독 진행
 . *eXpert 서비스 출시* (2019)
-** 서비스 알림 개발 (서비스 내부 노출, 네이버 메인, 앱, 메일)
-** 상담 후기 및 답변 개발
-** 기타 후처리 개발, rabbitmq-delayed-message-plugin 도입
+** 서비스 알림, 상담 후기 및 답변 개발
+** 기타 후처리 개발, https://github.com/rabbitmq/rabbitmq-delayed-message-exchange[rabbitmq-delayed-message-plugin] 도입
 . *내부 데이터 추출, 보정 툴 개선* (2018)
 ** 10년 이상 지속된 작업 플로우 유지 + 기능 개선
 *** 로컬에서 실행이 불가능, 무조건 서버를 접속해야하는 환경
@@ -79,14 +86,14 @@
 *** 기존: JDK 1.6, spring-framework 3.0 기반 사내 웹 프레임워크
 *** 개선: JDK 8, spring-boot 2.0
 . 기타
-** FE 업무 이관 작업
+** FE 업무 이관 (2019)
 *** nginx 도입, VM 기반에서 blue/green 배포 설정, 내부 워크샵 공유
-** Slack 및 WORKS bot 개발 및 유지보수
+** Slack 및 WORKS bot 개발 및 유지보수 (2018 ~ 2021)
 *** 주기적인 노티성 작업 자동화, 기타 기능 추가
-*** 주간회의 작성, 점심 메뉴, 서버 재시작 알림, 배포 공지 알림 등
-** https://m.kin.naver.com/mobile/choice/home[지식iN CHOiCE]
+*** 주간회의 작성, 점심 메뉴, 서버 재시작, 배포 공지 알림 등
+** https://m.kin.naver.com/mobile/choice/home[지식iN CHOiCE] (2019)
 *** 외부 연동, 목록 및 페이징 구현, 기존 서비스 스펙 연동 등
-** 서비스 장애 방지
+** 서비스 장애 방지 (2020)
 *** Resilience4j 도입, spring-boot 버전업, 서비스 전체 컴포넌트 모니터링 툴 개발 등
 ** 기타 서비스 및 내부 개발 과제 참여 (eXpert 홈개편, 지식iN / eXpert 프로필 분리, 기술스택 개선 후속, ...)
 
@@ -97,4 +104,6 @@
 == Others
 
 * spring repository 들에 대한 오탈자 수정 ({spring-organization}/spring-framework/{my-commits}[spring-framework], {spring-organization}/spring-boot{my-commits}[spring-boot], {spring-organization}/spring-kafka/{my-commits}[spring-kafka] 등)
-* 관심사 위주의 개인 & 소규모 단위 스터디 진행 - {my-github}/study[repository]
+* 2020 부스트캠프 멘토링 (Slack clone 프로젝트)
+** 3개 팀, 총 10명. 코드 리뷰, 과제 진행 간 질의 응답 등
+* 관심사 위주의 개인, 소규모 단위 스터디 진행 - {my-github}/study[repository]
