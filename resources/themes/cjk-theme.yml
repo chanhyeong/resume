@@ -1,0 +1,10 @@
+extends: default
+font:
+  catalog:
+    merge: true
+    Nanum Gothic: NanumGothic.ttf
+  fallbacks:
+    - Noto Serif
+base:
+  text-align: left
+  font-family: Nanum Gothic

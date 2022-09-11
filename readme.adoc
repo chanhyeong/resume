@@ -1,0 +1,30 @@
+= 이력서
+
+== 준비 사항
+
+[code,bash]
+----
+# asciidoctor cli 설치
+brew install asciidoctor
+----
+
+=== 기타 안되는 경우
+
+[code,bash]
+----
+# 폰트 설정을 위한 ruby 라이브러리 설치
+gem install ttfunk
+
+# register font
+ruby validate-font.rb ./resources/fonts/NanumGothic.ttf
+----
+
+.validate-font.rb
+[code.rb]
+----
+require 'ttfunk'
+require 'ttfunk/subset_collection'
+
+ttf_subsets = TTFunk::SubsetCollection.new TTFunk::File.open ARGV[0]
+(0...(ttf_subsets.instance_variable_get :@subsets).size).each {|idx| ttf_subsets[idx].encode }
+----
