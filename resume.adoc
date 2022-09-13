@@ -52,14 +52,14 @@
 
 네이버페이 아키텍처 개선 프로젝트 - 정산 파트
 
-. *건별 정산 재개발*
+. *건별 정산 재개발* (2021 ~ 2022)
 ** 건별 정산: 주문 흐름에서 발생하는 상품, 배송비, 쿠폰, ... 등의 개별 건에 대한 정산
 ** 시간 단위 배치 -> 이벤트 기반 실시간 처리로 전환
 ** 주문/정산/... 등의 단일 DB 에서 정산 DB 독립
 ** 전반적인 이벤트 관련 처리 (실패 시 재시도, 복구 정책 등) 와 전환 방안 정의 및 구현
 ** SQL -> 어플리케이션 레벨로 로직 이관, 기존 / 신규 처리 결과 검증
 ** 기존 컴포넌트에 임시 복구 처리를 위한 복구 배치 추가
-. *일단위 정산 검증 및 복구 배치 전환*
+. *일단위 정산 검증 및 복구 배치 전환* (2022)
 ** JDK 8 + spring-framework 3.0 -> Kotlin + spring-boot 2.x 저장소로 이관
 ** 상위 생성한 임시 복구 배치를 이벤트 기반에 맞는 형태로 설계 및 재개발
 
@@ -106,4 +106,4 @@
 * spring repository 들에 대한 오탈자 수정 ({spring-organization}/spring-framework/{my-commits}[spring-framework], {spring-organization}/spring-boot{my-commits}[spring-boot], {spring-organization}/spring-kafka/{my-commits}[spring-kafka] 등)
 * 2020 부스트캠프 멘토링 (Slack clone 프로젝트)
 ** 3개 팀, 총 10명. 코드 리뷰, 과제 진행 간 질의 응답 등
-* 관심사 위주의 개인, 소규모 단위 스터디 진행 - {my-github}/study[repository]
+* 관심사 위주의 개인, 소규모 단위 study - {my-github}/study[repository]

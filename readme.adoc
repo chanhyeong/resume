@@ -44,7 +44,7 @@ ttf_subsets = TTFunk::SubsetCollection.new TTFunk::File.open ARGV[0]
 
 == Known Issues
 
-* 한국어 폰트에 따라 파일 크기, Github Preview 불가 등의 이슈가 있음
+* 한국어 폰트에 따라 파일 크기, Github Preview 불가, 특정 글자 렌더링 실패 등의 이슈가 있음
 ** 2022.09.11 기준
 +
 |===
@@ -54,6 +54,7 @@ ttf_subsets = TTFunk::SubsetCollection.new TTFunk::File.open ARGV[0]
 
 |나눔고딕 |126KB |3depth 이상 list 에 대한 아이콘이 없음
 
-|Noto Sans KR |1MB |Github 에서 preview 불가능, 파일 큼
+|Noto Sans KR |1MB |Github 에서 preview 불가능, 파일 큼 +
+"스터디" 에서 "디" 렌더링 되지 않음
 |===
 +
