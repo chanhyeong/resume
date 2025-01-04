@@ -1,6 +1,7 @@
 = 조찬형 / Backend Engineer
 
 :spring-organization: https://github.com/spring-projects
+:naver-organization: https://github.com/naver
 :my-commits: commits?author=chanhyeong
 :my-github: https://github.com/chanhyeong
 :images: ./resources/images
@@ -24,6 +25,7 @@
 * Zookeeper / Lambda 기반 Feature Toggle
 * 배포 구축 - 사내 Kubernetes, PM/VM
 * spring-project, spring-cloud, naver 등 오픈소스 기여
+* EDA w. apache kafka
 * 기타
 ** 기존 배포 환경 내 blue/green 도입
 ** nginx / apache httpd
@@ -43,7 +45,7 @@
 *** 도메인 이벤트를 외부 사용자들을 위한 카프카 메시지로 발행하는 시스템 재설계
 *** DB insert -> CDC 로 발생된 이벤트 수신 -> 변환 및 발행
 .. 쓰기 작업들에 대한 단일 DB -> 분산 DB 기반 재개발
-*** 주문 생성, 배송지 수정 등 쓰기 작업들에 대한 분산 DB 기반 로직 재개발, dualwrite 처리
+.. 쓰기 작업 메인 DB 전환 (Oracle first -> MySQL first)
 . *정산* (2021.05 ~ 2022.09)
 .. 건별 정산 (2021 ~ 2022)
 *** 개별 주문 건단위 정산 생성을 배치 기반 -> 이벤트 기반으로 재설계
@@ -51,6 +53,10 @@
 *** 전반적인 이벤트 관련 처리 (실패 시 재시도, 복구 정책 등) 와 전환 방안 정의 및 구현
 .. 일단위 정산 배치 (2022)
 *** JDK 8 + spring-framework -> Kotlin + spring-boot 저장소로 이관
+. *라이브러리 개발* (2024.01 ~)
+** 사내/외 라이브러리 유지보수 및 신규 기능 개발
+** 사내: 레디스, 분산 MySQL DB
+** 사외: {naver-organization}/spring-jdbc-plus[spring-jdbc-plus], {naver-organization}/eventeria[eventeria]
 
 ==== https://kin.naver.com/[지식iN] / https://m.expert.naver.com/[eXpert] (2018.03 ~ 2021.04)
 
@@ -85,7 +91,11 @@
 
 * FE 업무 이관 작업 간 서버 및 배포 구성 경험 공유 (2019) - 팀 내
 * circuit breaker 도입 등 장애 예방 경험 공유 (2020) - 상위 조직 내
-* 카프카 컨슈머 어플리캐이션 재시도와 기타 팁 공유 (2024) - 사내
+* 카프카 컨슈머 앱 활용 백서: 성공적인 재시도를 위한 팁과 전략	
+ (2024) - 사내
+** {my-github}/kafka-retry[example codes]
+* 맞으면서 배우는 WebClient -> RestClient 전환기 (2024) - 사내
+** {my-github}/webclient-to-restclient[example codes]
 
 == Educations
 
